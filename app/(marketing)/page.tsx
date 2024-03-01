@@ -1,5 +1,6 @@
 import { Medal } from 'lucide-react'
 import Link from 'next/link'
+import { Poppins } from 'next/font/google'
 import localFont from 'next/font/local'
 
 
@@ -8,6 +9,21 @@ import { cn } from '@/lib/utils'
 
 const headingFont = localFont({
     src:'../../public/fonts/font.woff2'
+})
+
+const textFont = Poppins({
+    subsets: ['latin'],
+    weight: [
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "900"
+    ]
 })
 
 const MarketingPage = () => {
@@ -23,12 +39,13 @@ const MarketingPage = () => {
                       work forward
                   </div>
           </div>
-          <div className='text-sm md:text-xl max-w-xs md:max-w-2xl mx-auto text-center mt-4 text-neutral-400'>
+          <div className={cn('text-sm md:text-xl max-w-xs md:max-w-2xl mx-auto text-center mt-4 text-neutral-400'
+          ,textFont.className)}>
               collaborate, manage project and reach new productivity peaks. From high rises to the home office, the way your team work is unique - Accomplish all it with Taskify
           </div>
           <Button className='mt-4' size={'lg'} asChild>
               <Link href="/sign-up">
-                Get taskify for free
+                Get Taskify for free
               </Link>
           </Button>
     </div>
